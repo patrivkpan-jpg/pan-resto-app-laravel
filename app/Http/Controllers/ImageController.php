@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\ImageModel;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
+
 
 class ImageController extends Controller
 {
@@ -20,26 +24,9 @@ class ImageController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $data = $request->all();
         $response = ImageModel::create($data);
         return response()->json($response, 200);
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
     }
 
     /**
@@ -47,6 +34,6 @@ class ImageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
     }
 }

@@ -20,6 +20,12 @@ return new class extends Migration
         });
         Schema::table('menu', function (Blueprint $table) {
             $table->foreignId('created_by')
+                ->after('image_id')
+                ->references('id')
+                ->on('users');
+            $table->foreignId('updated_by')
+                ->nullable()
+                ->after('created_by')
                 ->references('id')
                 ->on('users');
         });

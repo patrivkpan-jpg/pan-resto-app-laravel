@@ -15,7 +15,7 @@ class ImageModel extends Model
 
     protected $primaryKey = 'id';
     
-    protected $fillable = ['name', 'filename'];
+    protected $fillable = ['name', 'source'];
     
     public function menuItem(): HasMany
     {
